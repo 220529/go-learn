@@ -1,0 +1,22 @@
+package main
+
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	// 创建 Gin 引擎
+	r := gin.Default()
+
+	// 定义 GET 路由
+	r.GET("/ping", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "pong",
+		})
+	})
+
+	// 启动服务器
+	r.Run(":8080") // 默认监听 8080 端口
+}
