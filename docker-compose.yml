@@ -1,0 +1,10 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3005:8080"
+    volumes:
+      - .:/app  # 将当前目录挂载到容器内 /app
+    restart: always  # 可选：容器崩溃时自动重启
